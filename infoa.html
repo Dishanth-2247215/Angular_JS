@@ -164,7 +164,7 @@
 
 
         <label style="font-size:25px; padding-left: 70px;">Search user Cart</label><br>
-        <span style="padding-left: 70px;"><input type="search" ng-model="searchuser"></span>
+        <span style="padding-left: 70px;"><input type="search" ng-model="count"></span>
         <br>
         <p style="color:gray; font: 15px; padding-left: 70px;">(Enter number in box)</p>
         <br><br>
@@ -179,13 +179,13 @@
                         <th>Mail Id</th>
                         <th>Cart</th>
                     </tr>
-                    <tr ng-repeat="user in users  | filter : searchuser">
+                    <tr ng-repeat="user in users ">
                         <td>{{user.id}}</td>
                         <td>{{user.name}}</td>
                         <td>{{user.gender | lowercase}}</td>
                         <th>{{user.phone}}</th>
                         <th>{{user.mail}}</th>
-                        <th>{{user.cart}}</th>
+                        <th>{{user.cart | cartfilter:count }}</th>
                     </tr>
                 </table>
             </div>

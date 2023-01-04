@@ -1,12 +1,12 @@
 var app=angular.module("userinfo",[]);
 
 app.filter("cartfilter",function(){
-    return function(input,option){
-        if(isNaN(option) || option==""){
+    return function(input,x){
+        if(input >= x){
             return input;
         }
         else{
-            return input.substring(0,option);
+            return input.substring(0,num);
         }
     }
 });
